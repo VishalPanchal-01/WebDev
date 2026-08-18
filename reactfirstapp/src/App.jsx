@@ -1,122 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+const Info =()=>{
+  return <h1>This is my Arrow function.</h1>
+};
+ 
+function App(){
+  let name = "KIET MCA";
+  let listInfo = {
+    id :1,
+    name : "vishal",
+    class : "Web Dev",
+  }
+  let arr = [
+    {id:1 , name :"java",scope:50},
+    {id:2 ,name:"python",scope:40},
+    {id:3,name:"javascript",scope:30},
+    {id:4,name:"kotlin",scope:20}
+  ]
 
-function App() {
-  const [count, setCount] = useState(0)
+  let arr2 = [
+    {id:1,name:'Vishal',scope:50},
+    {id:2 ,name:'Sarthak',scope:50},
+    {id:3 , name:'Sumit',scope:50},
+    {id:4 , name: 'Ujjwal',scope:50}
+  ]
+
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+    <div>
+      <h1>Welcome to React JS</h1>
+      <h1>Id:{listInfo.id}</h1>
+      <h1>Name:{listInfo.name}</h1>
+      <h1>Class:{listInfo.class}</h1>
+      <h1>in {name}</h1>
+      <h1>welcome to list of languages: </h1>
+      {
+        arr.map((langObj)=> {
+          return <li key ={langObj.id}>{langObj.id}. Name:{langObj.name}=Scope:{langObj.scope}</li>
+        })
+      }
+      <br />
+      {
+        arr2.map((arrInfo)=>{
+          return <li key ={arrInfo.id}>{arrInfo.id}. Name: {arrInfo.name} = Scope : {arrInfo.scope}</li>
+        })
+      }
+    </div>
   )
-}
+};
 
-export default App
+// export default App;
+
+export {App,Info};
